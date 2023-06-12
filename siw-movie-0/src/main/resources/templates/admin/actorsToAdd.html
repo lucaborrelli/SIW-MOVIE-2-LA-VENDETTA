@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Gestione degli Artisti</title>
+    <link rel="shortcut icon" href="/images/icona.svg" type="image/svg">
+    <link rel="stylesheet" href="/css/stile.css" />
+
+    <link rel="stylesheet" 
+        th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+        crossorigin="anonymous" />
+</head>
+
+<body style="background-color: #471717;">
+
+    <header th:replace="/fragments/base.html::intestazione"></header>
+	<BR>
+	<BR>
+	<BR>
+	<BR>
+	<BR>
+    <!-- Qui ci sono la lista degli attori che sono stati ancora selezionati nel film con poss. di cancellarli! -->
+
+    <div class="wrapper">
+		<div class="content">
+	    	<div class="container-entity">
+				<H3><div th:if="${actorsmovie.isEmpty()}">Non ci sono attori per questo film</div></H3>
+				<ul class="actorsmovie">
+					<h3 th:text="'Attori del film ' + ${movie.title}"></h3>
+					<H3>Attori che si possono rimuovere:</H3>
+					<li th:each="actor : ${actorsmovie}">
+						<span  class="entity">
+							<img th:src="@{/image/artist/{id}(id=${actor.id})}"  width="10%" />
+							<H2><a th:text="${actor.name}+' '+${actor.surname}"></a></H2>
+							<a th:href="@{'/admin/removeActorFromMovie/'+ ${actor.id}+'/'+${movie.id}}"><img src="/images/trash.png"/></a>
+						</span>
+					</li>
+				</ul>
+				
+				
+				<ul>
+					<span>
+						<H3>Attori che si possono aggiungere:</H3>
+						<li th:each="actor : ${artists}">
+							<span  class="entity">
+								<img th:src="@{/image/artist/{id}(id=${actor.id})}"  width="10%" />	
+								<h2><a th:text="${actor.name}+' '+${actor.surname}"></a></h2>
+								<a th:href="@{'/admin/addActorToMovie/'+ ${actor.id}+'/'+${movie.id}}"><img src="/images/add.png"/></a>
+							</span>
+						</li>
+						<div>
+							<a th:href="@{'/admin/formUpdateMovie/'+ ${movie.id}}"><button type="button">Fine</button></a>
+						</div>
+					</span>
+				</ul>
+			 </div>
+		</div>
+	</div>
+	
+    <footer th:replace="/fragments/base.html::footer"></footer>
+
+</body>
+
+</html>

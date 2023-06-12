@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="UTF-8">
+	    <title>Aggiornamento Film</title>
+	  	<link rel="shortcut icon" href="/images/icona.svg" type="image/svg">
+	  	<link rel="stylesheet" href="/css/stile.css" />
+	  	
+	    <link rel="stylesheet" 
+			th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css}" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+</head>
+
+<body>
+	
+	<header th:replace="/fragments/base.html::intestazione"></header>	
+	
+	<div class="wrapper" style="background-color: #471717;">
+   		<div class="form-container">
+			 <form method="POST" class="form-Login text-center" enctype="multipart/form-data" th:action="@{/admin/movie/edit/{id}(id=${movie.id})}" th:object="${movie}">
+				 <div th:if="${#fields.hasGlobalErrors()}">
+						<errors>
+        					<p style="color:red;" th:each="err : ${#fields.globalErrors()}" th:text="${err}">...</p> 
+						</errors>
+				</div>
+				
+				 <span> 
+					 <br>
+					 <br>
+					 <br>
+					 <br>
+    				<div class="form-group">
+				    	<label for="name">Titolo:</label>
+    					<input required type="text" id="title" name="title" th:value="${movie.title}" readonly/>
+    				</div>
+    				
+    				 <div class="form-group">
+   					 	<label for="year">Anno:</label>
+    				 	<input required type="text" id="year" name="year" th:value="${movie.year}" readonly/>
+    				 </div>
+    				<div class="form-group">
+						<label for="plot">Trama:</label> 
+						<span><input required type="text" th:field="${movie.plot}" class="form-control" id="plot" /></span>	
+						<errors>
+							<span style="color:red;" th:if="${#fields.hasErrors('plot')}" th:errors="${movie.plot}"></span> 
+						</errors>
+					</div>
+    				
+    				 <div class="form-group">
+						<label for="genre">Seleziona un genere:</label>
+  						<select id="genre" name="genre" th:field="${movie.genre}">
+				  			<option value="">/</option>
+  				  			<option value="animazione">animazione</option>
+    			 			<option value="avventura">avventura</option>
+    			  			<option value="azione">azione</option>
+    			 			<option value="biografico">biografico</option>
+    			  			<option value="catastrofico">catastrofico</option>
+    			  			<option value="comico">comico</option>
+    			 			<option value="commedia">commedia</option>
+    			  			<option value="drammatico">drammatico</option>
+    			  			<option value="fantascienza">fantascienza</option>
+    			  			<option value="fantasy">fantasy</option>
+    			 			<option value="giallo">giallo</option>
+			    			<option value="guerra">guerra</option>
+			    			<option value="horror">horror</option>
+			    			<option value="musicale">musicale</option>
+			    			<option value="politco-sociale">politico-sociale</option>
+			    			<option value="sportivo">sportivo</option>
+			    			<option value="storico">storico</option>
+			    			<option value="western">western</option>
+  						</select>	
+  						<errors>
+							<span style="color:red;" th:if="${#fields.hasErrors('genre')}" th:errors="${movie.genre}"></span> 
+						</errors>
+					</div>
+		
+				<div class="form-group">
+  			 		<label for="isOnNetflix">E' disponibile su Netflix?</label>
+  		  	 		<input type="checkbox" id="isOnNetflix" class="form-control" name="isOnNetflix" th:field="${movie.isOnNetflix}" value="true"/>
+				</div>
+		
+				<div class="form-group">
+  					<label for="isOnPrimeVideo">E' disponibile su Prime Video?</label>
+  		  	 		<input type="checkbox" id="isOnPrimeVideo" class="form-control" name="isOnPrimeVideo" th:field="${movie.isOnPrimeVideo}" value="true"/>
+				</div>
+		
+				<div class="form-group">
+  			  		<label for="isOnDisneyPlus">E' disponibile su DisneyPlus?</label>
+  		  	    	<input type="checkbox" id="isOnDisneyPlus" class="form-control" name="isOnDisneyPlus" th:field="${movie.isOnDisneyPlus}" value="true"/>
+				</div>
+				
+				
+				<div class="form-group">
+  			  		<label for="image">Locandina</label>
+  		  	    	<input required type="file" id="image" name="image" class="form-control" th:field="${movie.image}"/>
+				</div>
+  				
+    			<button type="submit">Salva</button>
+    			</span> 
+			</form> 
+		</div>
+	</div> 	
+	<footer th:replace="/fragments/base.html::footer"></footer>
+</body>
+</html>

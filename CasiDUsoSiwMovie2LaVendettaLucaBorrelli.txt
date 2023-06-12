@@ -1,0 +1,92 @@
+CASO D'USO 1 ADMIN: Aggiuntà di un film
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità movie e artist e la cancellazione delle recensioni)
+3) L'amministratore sceglie l'operazione di inserimento film
+4) L'amministratore completa il form di inserimento, lo invia, creando così l'oggetto entità
+5) L'amministratore va nelle operazioni di gestione dell'entità movie e aggiunge al film gli artisti (come attori o registi) che hanno preso parte al film.
+
+CASO D'USO 2 ADMIN: Aggiunta di un artista
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità movie e artist e la cancellazione delle recensioni)
+3) L'amministratore sceglie l'operazione di inserimento artista
+4) L'amministratore completa il form di inserimento, lo invia, creando così l'oggetto entità
+5) L'amministratore va nelle operazioni di gestione dell'entità artist e aggiunge all'artista tutti i film a cui ha preso parte come attore o come regista.
+
+CASO D'USO 3 ADMIN: Modifica di un film
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità movie e artist e la cancellazione delle recensioni)
+3) L'amministratore sceglie l'operazione di gestisci film
+4) L'amministratore visualizza la lista dei film disponibili e per ogni film ha la possibilità di modificare il regista e la lista di attori del film e  i dati del film
+5) L'amministratore sceglie gli artisti e clicca fine per apportare le modifiche.
+
+CASO D'USO 4 ADMIN: Modifica di un artista
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità movie e artist e la cancellazione delle recensioni)
+3) L'amministratore sceglie l'operazione di gestisci artista
+4) L'amministratore visualizza la lista di artisti disponibili e per ogni artista ha la possibilità di modificare i dati dell'artista
+
+CASO D'USO 5 ADMIN: cancellazione di un artista
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità movie e artist e la cancellazione delle recensioni)
+3) L'amministratore sceglie l'operazione di gestisci artisti
+4) L'amministratore visualizza la lista degli artisti e per ognuno c'è il pulsante di cancellazione dell'artista,premendolo lo cancella
+
+CASO D'USO 6 ADMIN: cancellazione di un film
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità movie e artist e la cancellazione delle recensioni)
+3) L'amministratore sceglie l'operazione di gestisci film
+4) L'amministratore visualizza la lista dei film e per ognuno c'è il pulsante di cancellazione del film, premendolo lo cancella
+
+CASO D'USO 7 ADMIN: cancellazione di una recensione
+1)Amministratore accede al sistema tramite username e password
+2)Il Sistema mostra la pagina con tutte le possibili operazioni a disposizione per il proprietario del sito 
+  (Inserimento e gestione delle entità movie e artist e la cancellazione delle recensioni)
+3) L'amministratore sceglie l'operazione di cancellazione recensione
+4) L'amministratore visualizza la lista delle recensioni e per ognuna c'è il pulsante di cancellazione, premendolo la cancella
+
+
+----------------------------------------------------------------------------------------------
+
+CASO D'USO 8 DEFAULT: Inserimento Recensione
+1) L'utente accede al sistema con username e password
+2) visualizza un film
+3) clicca sul pulsante per inserire una nuova recensione al film
+4) compila il form e lo invia
+
+CASO D'USO 9 DEFAULT: aggiunta e cancellazione di un film alla lista personale
+1) L'utente accede al sistema con username e password
+2) visualizza un film
+3) clicca sul pulsante per aggiungere il film alla sua lista oppure per eliminarlo se è già aggiunto
+
+CASO D'USO 10 DEFAULT: visualizzazione lista personale
+1) L'utente accede al sistema con username e password
+2)  Clicca su "La mia Lista"
+
+-----------------------------------------------------------------------------------------------
+CASO D'USO 11 DEFAULT E ANONYMOUS: Visualizzazione lista Film
+1) Clicca su Film 
+
+CASO D'USO 12 DEFAULT E ANONYMOUS: Visualizzazione lista Artisti
+1) Clicca su Artisti
+
+CASO D'USO 13 DEFAULT E ANONYMOUS: Ricerca Film
+1) Clicca su Cerca Film 
+2) Inserisce i parametri (Genere o anno) e preme invio
+
+CASO D'USO 14 DEFAULT E ANONYMOUS: Ricerca Artista
+1) Clicca su Cerca Artista
+2) inserisce il nome dell'artista e preme invio
+
+CASO D'USO 15 DEFAULT E ANONYMOUS: Visualizzazione Film
+1) Clicca su Film 
+2) seleziona un preciso film
+
+CASO D'USO 16  DEFAULT E ANONYMOUS: Visualizzazione Artista
+1) Clicca su Artisti
+2) seleziona un preciso artista
